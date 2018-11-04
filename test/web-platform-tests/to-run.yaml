@@ -80,6 +80,10 @@ window-screen-width.html: [fail, Test not applicable - no output device]
 
 ---
 
+DIR: custom-elements
+
+---
+
 DIR: dom/abort
 
 ---

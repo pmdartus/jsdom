@@ -33,6 +33,7 @@ addDir("../../lib/jsdom/living/websockets");
 addDir("../../lib/jsdom/living/hr-time");
 addDir("../../lib/jsdom/living/constraint-validation");
 addDir("../../lib/jsdom/living/webstorage");
+addDir("../../lib/jsdom/living/custom-elements");
 
 const outputDir = path.resolve(__dirname, "../../lib/jsdom/living/generated/");
 
