@@ -17,9 +17,8 @@ interface Document : Node {
   HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);
   HTMLCollection getElementsByClassName(DOMString classNames);
 
-//  We don't support the last argument yet
-//  [CEReactions, NewObject] Element createElement(DOMString localName, optional ElementCreationOptions options);
-//  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, optional ElementCreationOptions options);
+  [CEReactions, NewObject] Element createElement(DOMString localName, optional ElementCreationOptions options);
+  // [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, optional ElementCreationOptions options);
   [CEReactions, NewObject] Element createElement(DOMString localName);
   [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName);
   [NewObject] DocumentFragment createDocumentFragment();
