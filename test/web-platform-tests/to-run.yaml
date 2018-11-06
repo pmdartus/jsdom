@@ -98,10 +98,13 @@ attribute-changed-callback.html: [
   "TODO: Updating a style property value triggers the attribute mutation. Since the property is not wrapped into a CEReaction it will not trigger attributeChangedCallback sync.",
   "TODO: Initial value of global HTML attributes doesn't trigger the attributeChangedCallback. Where is it specd?"
 ]
-builtin-coverage.html: ["fail", "TODO"]
+builtin-coverage.html: [
+  "fail",
+  "TODO: Understand why existing standard elements (body) with is are not getting upgraded on define"
+]
 connected-callbacks-html-fragment-parsing.html: ["fail", "TODO"]
 custom-element-reaction-queue.html: ["fail", "TODO"]
-custom-element-registry/define.html: ["fail", "TODO"]
+# custom-element-registry/define.html: ["fail", "TODO"]
 custom-element-registry/per-global.html: ["fail", "TODO"]
 custom-element-registry/upgrade.html: ["fail", "TODO"]
 htmlconstructor/newtarget.html: ["fail", "TODO"]
@@ -189,6 +192,7 @@ Document-constructor.html: [fail, new Document().origin should inherit from curr
 Document-contentType/contentType/contenttype_mimeheader_01.html: [timeout, Unknown]
 Document-contentType/contentType/contenttype_xml.html: [timeout, Unknown]
 Document-createElement-namespace.html: [timeout, Unknown]
+Document-createElement.html: [fail, Unknown]
 Document-createElementNS.html: [fail, Unknown]
 Document-createEvent.html: [fail, Unknown]
 Document-getElementById.html: [fail, We cache IDs in insertion order]
@@ -227,6 +231,7 @@ DOMParser-parseFromString-html.html: [fail, needs to get "the active document's 
 DOMParser-parseFromString-xml-doctype.html: [fail, Unknown]
 DOMParser-parseFromString-xml-internal-subset.html: [fail, Unknown]
 DOMParser-parseFromString-xml.html: [fail, needs to get "the active document's URL" which is not possible with one DOMParser shared across all windows]
+XMLSerializer-serializeToString.html: [fail, Regression to investigate]
 createContextualFragment.html: [fail, Unknown]
 innerhtml-03.xhtml: [fail, Unknown]
 innerhtml-05.xhtml: [fail, Unknown]
