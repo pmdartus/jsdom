@@ -83,14 +83,15 @@ window-screen-width.html: [fail, Test not applicable - no output device]
 DIR: custom-elements
 
 CustomElementRegistry.html: ["timeout", "TODO"]
-# Document-createElement.html: ["fail", "TODO"]
-Document-createElementNS.html: ["fail", "TODO"]
+Document-createElement.html: [fail,
+  ":defined pseudo selector makes the parser throws",
+  "Upgrade on insert"]
+Document-createElementNS.html: ["fail", "UnkownHTMLElement wrong interface"]
 HTMLElement-constructor.html: ["fail", "TODO"]
 adopted-callback.html: ["fail", "TODO"]
 attribute-changed-callback.html: ["fail", "TODO"]
 builtin-coverage.html: ["fail", "TODO"]
 connected-callbacks-html-fragment-parsing.html: ["fail", "TODO"]
-connected-callbacks.html: ["fail", "TODO"]
 custom-element-reaction-queue.html: ["fail", "TODO"]
 custom-element-registry/define.html: ["fail", "TODO"]
 custom-element-registry/per-global.html: ["fail", "TODO"]
@@ -184,7 +185,6 @@ Document-constructor.html: [fail, new Document().origin should inherit from curr
 Document-contentType/contentType/contenttype_mimeheader_01.html: [timeout, Unknown]
 Document-contentType/contentType/contenttype_xml.html: [timeout, Unknown]
 Document-createElement-namespace.html: [timeout, Unknown]
-# Document-createElement.html: [fail, Unknown]
 Document-createElementNS.html: [fail, Unknown]
 Document-createEvent.html: [fail, Unknown]
 Document-getElementById.html: [fail, We cache IDs in insertion order]
