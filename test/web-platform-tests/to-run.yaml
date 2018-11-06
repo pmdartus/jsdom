@@ -93,7 +93,11 @@ adopted-callback.html: [
   "Correct document owner on template contents",
   "Add missing adopted steps to the template and the adopt node algo"
 ]
-attribute-changed-callback.html: ["fail", "TODO"]
+attribute-changed-callback.html: [
+  "fail",
+  "TODO: Updating a style property value triggers the attribute mutation. Since the property is not wrapped into a CEReaction it will not trigger attributeChangedCallback sync.",
+  "TODO: Initial value of global HTML attributes doesn't trigger the attributeChangedCallback. Where is it specd?"
+]
 builtin-coverage.html: ["fail", "TODO"]
 connected-callbacks-html-fragment-parsing.html: ["fail", "TODO"]
 custom-element-reaction-queue.html: ["fail", "TODO"]
@@ -117,7 +121,6 @@ reactions/Attr.html: ["fail", "TODO"]
 reactions/CSSStyleDeclaration.html: ["fail", "TODO"]
 reactions/ChildNode.html: ["fail", "TODO"]
 reactions/DOMStringMap.html: ["fail", "TODO"]
-reactions/DOMTokenList.html: ["fail", "TODO"]
 reactions/Document.html: ["fail", "TODO"]
 reactions/Element.html: ["fail", "TODO"]
 reactions/ElementContentEditable.html: ["fail", "TODO"]
@@ -130,8 +133,6 @@ reactions/HTMLSelectElement.html: ["fail", "TODO"]
 reactions/HTMLTableElement.html: ["fail", "TODO"]
 reactions/HTMLTableRowElement.html: ["fail", "TODO"]
 reactions/HTMLTableSectionElement.html: ["fail", "TODO"]
-reactions/HTMLTitleElement.html: ["fail", "TODO"]
-reactions/NamedNodeMap.html: ["fail", "TODO"]
 reactions/Node.html: ["fail", "TODO"]
 reactions/ParentNode.html: ["fail", "TODO"]
 reactions/Range.html: ["fail", "TODO"]
