@@ -88,7 +88,11 @@ Document-createElement.html: [fail,
   "Upgrade on insert"]
 Document-createElementNS.html: ["fail", "UnkownHTMLElement wrong interface"]
 HTMLElement-constructor.html: ["fail", "TODO"]
-adopted-callback.html: ["fail", "TODO"]
+adopted-callback.html: [
+  "fail",
+  "Correct document owner on template contents",
+  "Add missing adopted steps to the template and the adopt node algo"
+]
 attribute-changed-callback.html: ["fail", "TODO"]
 builtin-coverage.html: ["fail", "TODO"]
 connected-callbacks-html-fragment-parsing.html: ["fail", "TODO"]
