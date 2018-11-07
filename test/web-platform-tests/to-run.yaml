@@ -87,14 +87,9 @@ CustomElementRegistry.html: ["fail",
 ]
 Document-createElement.html: [fail,
   "TODO: :defined pseudo selector makes the parser throws",
-  "TODO: Correct document owner on template contents",
 ]
 HTMLElement-constructor.html: ["fail",
   "V8 invokes access the Proxy get trap to access the constructor when calling super. Chrome suffers from the same issue. See wpt-results: https://wpt.fyi/results/custom-elements/HTMLElement-constructor.html?aligned&label=stable"
-]
-adopted-callback.html: ["fail",
-  "TODO: Correct document owner on template contents",
-  "TODO: Add missing adopted steps to the template and the adopt node algo"
 ]
 attribute-changed-callback.html: ["fail",
   "TODO: Updating a style property value triggers the attribute mutation. Since the property is not wrapped into a CEReaction it will not trigger attributeChangedCallback sync.",
@@ -108,9 +103,6 @@ custom-element-reaction-queue.html: ["fail",
 ]
 custom-element-registry/per-global.html: ["fail",
   "TODO: Investigate why the iframe is closed so early? The document is not present yet."
-]
-custom-element-registry/upgrade.html: ["fail",
-  "TODO: Correct document owner on template contents",
 ]
 htmlconstructor/newtarget.html: ["fail", "TODO"]
 parser/parser-constructs-custom-element-synchronously.html: ["fail", "Script parsing is not blocking: https://github.com/jsdom/jsdom/issues/2413"]
@@ -147,11 +139,8 @@ reactions/Selection.html: ["fail", "window.getSelection is not implemented"]
 reactions/ShadowRoot.html: ["fail",
   "TODO: Requires changes to the HTML to DOM for innerHTML"
 ]
-upgrading.html: ["fail", "TODO"]
 upgrading/Document-importNode.html: ["fail", "TODO"]
 upgrading/Node-cloneNode.html: ["fail", "TODO"]
-upgrading/upgrading-enqueue-reactions.html: ["fail", "TODO"]
-upgrading/upgrading-parser-created-element.html: ["fail", "TODO"]
 
 ---
 
