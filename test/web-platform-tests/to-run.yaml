@@ -82,63 +82,71 @@ window-screen-width.html: [fail, Test not applicable - no output device]
 
 DIR: custom-elements
 
-CustomElementRegistry.html: ["timeout", "TODO"]
-Document-createElement.html: [fail,
-  ":defined pseudo selector makes the parser throws",
-  "Upgrade on insert"]
-Document-createElementNS.html: ["fail", "UnkownHTMLElement wrong interface"]
-HTMLElement-constructor.html: ["fail", "TODO"]
-adopted-callback.html: [
-  "fail",
-  "Correct document owner on template contents",
-  "Add missing adopted steps to the template and the adopt node algo"
+CustomElementRegistry.html: ["fail",
+  "The return Promise contructor from whenDefined, if different than the one on the window resulting in an identify discontinuity"
 ]
-attribute-changed-callback.html: [
-  "fail",
+Document-createElement.html: [fail,
+  "TODO: :defined pseudo selector makes the parser throws",
+  "TODO: Correct document owner on template contents",
+]
+HTMLElement-constructor.html: ["fail",
+  "V8 invokes access the Proxy get trap to access the constructor when calling super. Chrome suffers from the same issue. See wpt-results: https://wpt.fyi/results/custom-elements/HTMLElement-constructor.html?aligned&label=stable"
+]
+adopted-callback.html: ["fail",
+  "TODO: Correct document owner on template contents",
+  "TODO: Add missing adopted steps to the template and the adopt node algo"
+]
+attribute-changed-callback.html: ["fail",
   "TODO: Updating a style property value triggers the attribute mutation. Since the property is not wrapped into a CEReaction it will not trigger attributeChangedCallback sync.",
   "TODO: Initial value of global HTML attributes doesn't trigger the attributeChangedCallback. Where is it specd?"
 ]
-builtin-coverage.html: [
-  "fail",
-  "TODO: Understand why existing standard elements (body) with is are not getting upgraded on define"
+connected-callbacks-html-fragment-parsing.html: ["fail",
+  "TODO: Fix fragment parsing"
 ]
-connected-callbacks-html-fragment-parsing.html: ["fail", "TODO"]
-custom-element-reaction-queue.html: ["fail", "TODO"]
-custom-element-registry/per-global.html: ["fail", "TODO"]
-custom-element-registry/upgrade.html: ["fail", "TODO"]
+custom-element-reaction-queue.html: ["fail",
+  "TODO: Investigate why document.write is wrong. Multiple document.write erase the previous content"
+]
+custom-element-registry/per-global.html: ["fail",
+  "TODO: Investigate why the iframe is closed so early? The document is not present yet."
+]
+custom-element-registry/upgrade.html: ["fail",
+  "TODO: Correct document owner on template contents",
+]
 htmlconstructor/newtarget.html: ["fail", "TODO"]
-microtasks-and-constructors.html: ["fail", "TODO"]
-parser/parser-constructs-custom-element-synchronously.html: ["fail", "TODO"]
-parser/parser-constructs-custom-elements-with-is.html: ["fail", "TODO"]
-parser/parser-constructs-custom-elements.html: ["fail", "TODO"]
-parser/parser-sets-attributes-and-children.html: ["fail", "TODO"]
-parser/parser-uses-constructed-element.html: ["fail", "TODO"]
-parser/parser-uses-registry-of-owner-document.html: ["fail", "TODO"]
-parser/serializing-html-fragments.html: ["fail", "TODO"]
-pseudo-class-defined.html: ["timeout", "TODO"]
-range-and-constructors.html: ["fail", "TODO"]
-reactions/Attr.html: ["fail", "TODO"]
-reactions/CSSStyleDeclaration.html: ["fail", "TODO"]
-reactions/ChildNode.html: ["fail", "TODO"]
+parser/parser-constructs-custom-element-synchronously.html: ["fail", "Script parsing is not blocking: https://github.com/jsdom/jsdom/issues/2413"]
+parser/parser-sets-attributes-and-children.html: ["fail", "Script parsing is not blocking: https://github.com/jsdom/jsdom/issues/2413"]
+parser/parser-uses-constructed-element.html: ["fail", "Script parsing is not blocking: https://github.com/jsdom/jsdom/issues/2413"]
+parser/parser-uses-registry-of-owner-document.html: ["fail",
+  "TODO: Correct document owner on template contents",
+  "TODO: Investigate issue related to document.write"
+]
+parser/serializing-html-fragments.html: ["fail",
+  "TODO: parse5 serializer doesn't have the concept of the is value. We need another hook in the tree adapter for this"
+]
+pseudo-class-defined.html: ["timeout",
+  "TODO: :defined pseudo selector makes the parser throws"
+]
+range-and-constructors.html: ["fail", "Range is not implemented"]
+reactions/CSSStyleDeclaration.html: ["fail",
+  "2 attributeChangedCallbacks are fired insted of 1 when cssText is set. CSSStyle invoke it's public setAttribute API when cssText is set."
+]
 reactions/DOMStringMap.html: ["fail", "TODO"]
 reactions/Document.html: ["fail", "TODO"]
 reactions/Element.html: ["fail", "TODO"]
 reactions/ElementContentEditable.html: ["fail", "TODO"]
 reactions/HTMLAnchorElement.html: ["fail", "TODO"]
 reactions/HTMLElement.html: ["fail", "TODO"]
-reactions/HTMLOptionElement.html: ["fail", "TODO"]
 reactions/HTMLOptionsCollection.html: ["fail", "TODO"]
 reactions/HTMLOutputElement.html: ["fail", "TODO"]
 reactions/HTMLSelectElement.html: ["fail", "TODO"]
 reactions/HTMLTableElement.html: ["fail", "TODO"]
 reactions/HTMLTableRowElement.html: ["fail", "TODO"]
 reactions/HTMLTableSectionElement.html: ["fail", "TODO"]
-reactions/Node.html: ["fail", "TODO"]
-reactions/ParentNode.html: ["fail", "TODO"]
-reactions/Range.html: ["fail", "TODO"]
-reactions/Selection.html: ["fail", "TODO"]
-reactions/ShadowRoot.html: ["fail", "TODO"]
-reactions/with-exceptions.html: ["fail", "TODO"]
+reactions/Range.html: ["fail", "Range is not implemented"]
+reactions/Selection.html: ["fail", "window.getSelection is not implemented"]
+reactions/ShadowRoot.html: ["fail",
+  "TODO: Requires changes to the HTML to DOM for innerHTML"
+]
 upgrading.html: ["fail", "TODO"]
 upgrading/Document-importNode.html: ["fail", "TODO"]
 upgrading/Node-cloneNode.html: ["fail", "TODO"]
