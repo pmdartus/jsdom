@@ -29,6 +29,7 @@
     "domexception": "^1.0.1",
     "escodegen": "^1.11.0",
     "html-encoding-sniffer": "^1.0.2",
+    "is-potential-custom-element-name": "^1.0.0",
     "nwsapi": "^2.0.9",
     "parse5": "5.1.0",
     "pn": "^1.1.0",
