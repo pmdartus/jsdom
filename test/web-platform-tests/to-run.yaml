@@ -82,9 +82,6 @@ window-screen-width.html: [fail, Test not applicable - no output device]
 
 DIR: custom-elements
 
-CustomElementRegistry.html: ["fail",
-  "The return Promise contructor from whenDefined, if different than the one on the window resulting in an identify discontinuity"
-]
 Document-createElement.html: [fail,
   "TODO: :defined pseudo selector makes the parser throws",
 ]
@@ -94,9 +91,6 @@ HTMLElement-constructor.html: ["fail",
 attribute-changed-callback.html: ["fail",
   "TODO: Updating a style property value triggers the attribute mutation. Since the property is not wrapped into a CEReaction it will not trigger attributeChangedCallback sync.",
   "TODO: Initial value of global HTML attributes doesn't trigger the attributeChangedCallback. Where is it specd?"
-]
-connected-callbacks-html-fragment-parsing.html: ["fail",
-  "TODO: Fix fragment parsing"
 ]
 custom-element-reaction-queue.html: ["fail",
   "TODO: Investigate why document.write is wrong. Multiple document.write erase the previous content"
@@ -122,24 +116,17 @@ range-and-constructors.html: ["fail", "Range is not implemented"]
 reactions/CSSStyleDeclaration.html: ["fail",
   "2 attributeChangedCallbacks are fired insted of 1 when cssText is set. CSSStyle invoke it's public setAttribute API when cssText is set."
 ]
-reactions/DOMStringMap.html: ["fail", "TODO"]
-reactions/Document.html: ["fail", "TODO"]
-reactions/Element.html: ["fail", "TODO"]
-reactions/ElementContentEditable.html: ["fail", "TODO"]
-reactions/HTMLAnchorElement.html: ["fail", "TODO"]
-reactions/HTMLElement.html: ["fail", "TODO"]
-reactions/HTMLOptionsCollection.html: ["fail", "TODO"]
-reactions/HTMLOutputElement.html: ["fail", "TODO"]
-reactions/HTMLSelectElement.html: ["fail", "TODO"]
-reactions/HTMLTableElement.html: ["fail", "TODO"]
-reactions/HTMLTableRowElement.html: ["fail", "TODO"]
-reactions/HTMLTableSectionElement.html: ["fail", "TODO"]
+reactions/DOMStringMap.html: ["fail", "TODO: Requires addition of CEReaction to proxy generation for DOMStringMap"]
+reactions/Document.html: ["fail", "Document.execCommand is not implemented"]
+reactions/Element.html: ["fail", "Element.insertAdjacentElement is not implemented"]
+reactions/ElementContentEditable.html: ["fail", "ElementContentEditable is not implemented"]
+reactions/HTMLElement.html: ["fail", "HTMLElement.draggable is not implemented", "HTMLElement.spellcheck is not implemented", "HTMLElement.innerText is not implemented"]
+reactions/HTMLOptionsCollection.html: ["fail", "TODO: Requires addition of CEReaction to proxy generation for HTMLOptionsCollection"]
+reactions/HTMLOutputElement.html: ["fail", "HTMLOutputElement.value is not implemented"]
+reactions/HTMLSelectElement.html: ["fail", "TODO: Requires addition of CEReaction to proxy generation for HTMLOptionsCollection"]
 reactions/Range.html: ["fail", "Range is not implemented"]
 reactions/Selection.html: ["fail", "window.getSelection is not implemented"]
-reactions/ShadowRoot.html: ["fail",
-  "TODO: Requires changes to the HTML to DOM for innerHTML"
-]
-upgrading/Document-importNode.html: ["fail", "TODO"]
+# upgrading/Document-importNode.html: ["fail", "TODO"]
 upgrading/Node-cloneNode.html: ["fail", "TODO"]
 
 ---
