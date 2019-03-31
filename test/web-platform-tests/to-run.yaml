@@ -91,29 +91,26 @@ window-screen-width.html: [fail, Test not applicable - no output device]
 
 DIR: custom-elements
 
-CustomElementRegistry.html: [fail, "Promise identity discontinuity",
-                                   "webidl2js doesn't deal well with Proxies"]
-Document-createElement.html: [fail, ":defined is not defined and throws",
-                                    "TODO: createElement should report error instead of throwing."]
-HTMLElement-constructor.html: [fail, TODO]
-attribute-changed-callback.html: [fail, TODO]
+CustomElementRegistry.html: [fail, Promise identity discontinuity,
+                                   webidl2js doesn't deal well with tests using Proxies to verify properties access]
+Document-createElement.html: [fail, :defined is not defined and throws,
+                                    TODO - createElement should report error instead of throwing]
+HTMLElement-constructor.html: [fail, webidl2js doesn't deal well with tests using Proxies to verify properties access]
+attribute-changed-callback.html: [fail, attributeChangedCallback doesn't work with CSSStyleDeclaration]
 builtin-coverage.html: [fail, TODO]
 connected-callbacks-html-fragment-parsing.html: [fail, TODO]
 custom-element-reaction-queue.html: [fail, Document.write implementation is not spec compliant]
 custom-element-registry/per-global.html: [fail, iframe location related issue]
-htmlconstructor/newtarget.html: [fail, TODO]
+htmlconstructor/newtarget.html: [fail, interface prototype are shared accross realms]
 microtasks-and-constructors.html: [fail, TODO]
 parser/parser-constructs-custom-element-synchronously.html: [fail, TODO]
-parser/parser-constructs-custom-elements-with-is.html: [fail, TODO]
-parser/parser-constructs-custom-elements.html: [fail, TODO]
-parser/parser-fallsback-to-unknown-element.html: [fail, Parser doesn't execute script blocks before HTML parser https://github.com/jsdom/jsdom/issues/2413]
 parser/parser-sets-attributes-and-children.html: [fail, TODO]
 parser/parser-uses-constructed-element.html: [fail, TODO]
 parser/parser-uses-create-an-element-for-a-token-svg.svg: [fail, TODO]
 parser/parser-uses-registry-of-owner-document.html: [fail, TODO]
 parser/serializing-html-fragments.html: [fail, TODO]
 perform-microtask-checkpoint-before-construction.html: [fail, TODO]
-pseudo-class-defined.html: [timeout, element.match(':defined') throws]
+pseudo-class-defined.html: [timeout, :defined is not defined and throws]
 range-and-constructors.html: [fail, TODO]
 reactions/CSSStyleDeclaration.html: [fail, TODO]
 reactions/DOMStringMap.html: [fail, TODO]
@@ -127,11 +124,9 @@ reactions/Range.html: [fail, TODO]
 reactions/Selection.html: [fail, TODO]
 throw-on-dynamic-markup-insertion-counter-construct.html: [timeout, TODO]
 throw-on-dynamic-markup-insertion-counter-reactions.html: [timeout, TODO]
-upgrading.html: [fail, TODO]
 upgrading/Document-importNode.html: [fail, TODO]
 upgrading/Node-cloneNode.html: [fail, TODO]
 upgrading/upgrading-enqueue-reactions.html: [fail, TODO]
-upgrading/upgrading-parser-created-element.html: [fail, TODO]
 
 ---
 
