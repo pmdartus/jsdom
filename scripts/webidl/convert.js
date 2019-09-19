@@ -10,7 +10,23 @@ const Webidl2js = require("webidl2js");
 
 const transformer = new Webidl2js({
   implSuffix: "-impl",
-  suppressErrors: true
+  suppressErrors: true,
+  processCEReactions(operation, body) {
+    // In the case of an attribute or a standard method the object holding the
+    // reference to the impl is the this value. In the case of a setter or a
+    // deleter it is the target argument passed to the proxy.
+    const obj = operation.setter || operation.deleter ? "target" : "this";
+
+    return `
+      ${obj}[impl]._ceReactionsPreSteps();
+
+      try {
+        ${body}
+      } finally {
+        ${obj}[impl]._ceReactionsPostSteps();
+      }
+    `;
+  }
 });
 
 function addDir(dir) {

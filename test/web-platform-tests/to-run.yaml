@@ -114,8 +114,10 @@ reactions/Document.html: [fail,
   Document.execCommand is not implemented, https://github.com/jsdom/jsdom/issues/1539
   Document.write implementation is not spec compliant]
 reactions/ElementContentEditable.html: [fail, contentEditable is not implemented]
+reactions/HTMLAreaElement.html: [fail, HTMLAreaElement doesn't implement download ping and referrerPolicy]
 reactions/HTMLButtonElement.html: [fail, HTMLButtonElement doesn't implement formAction formEnctype and formMethod]
 reactions/HTMLElement.html: [fail, translate and spellcheck attributes are not implemented on HTMLElement]
+reactions/HTMLImageElement.html: [fail, HTMLImageElement doesn't implement referrerPolicy and decoder]
 reactions/Range.html: [fail, Range is not implemented, https://github.com/jsdom/jsdom/issues/317]
 reactions/Selection.html: [fail, Selection is not implemented, https://github.com/jsdom/jsdom/issues/937]
 throw-on-dynamic-markup-insertion-counter-construct.html: [timeout, Document.write implementation is not spec compliant]
