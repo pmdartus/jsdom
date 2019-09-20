@@ -11,11 +11,10 @@ const Webidl2js = require("webidl2js");
 const transformer = new Webidl2js({
   implSuffix: "-impl",
   suppressErrors: true,
-  processCEReactions(operation, body) {
-    // In the case of an attribute or a standard method the object holding the
-    // reference to the impl is the this value. In the case of a setter or a
-    // deleter it is the target argument passed to the proxy.
-    const obj = operation.setter || operation.deleter ? "target" : "this";
+  processCEReactions(operationIdl, body) {
+    // In the case of an attribute or a standard method the object holding the reference to the impl is the this value.
+    // In the case of a setter or a deleter it is the target argument passed to the proxy.
+    const obj = operationIdl.setter || operationIdl.deleter ? "target" : "this";
 
     return `
       ${obj}[impl]._ceReactionsPreSteps();
@@ -24,6 +23,21 @@ const transformer = new Webidl2js({
         ${body}
       } finally {
         ${obj}[impl]._ceReactionsPostSteps();
+      }
+    `;
+  },
+  processHTMLConstructor(interfaceIdl, content) {
+    const { name } = interfaceIdl;
+
+    return content + `
+      const { HTMLConstructor } = require("../helpers/html-constructor");
+
+      module.exports.installConstructor = function(globalObject) {
+        globalObject["${name}"] = function() {
+          return HTMLConstructor({ globalObject, constructorName: "${name}" });
+        };
+
+        globalObject["${name}"].prototype = ${name}.prototype;
       }
     `;
   }
