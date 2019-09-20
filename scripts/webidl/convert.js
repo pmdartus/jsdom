@@ -30,14 +30,15 @@ const transformer = new Webidl2js({
     const { name } = interfaceIdl;
 
     return content + `
-      const { HTMLConstructor } = require("../helpers/html-constructor");
+      module.exports.installConstructor = function(globalObject, HTMLConstructor) {
+        const constructorName = "${name}";
 
-      module.exports.installConstructor = function(globalObject) {
-        globalObject["${name}"] = function() {
-          return HTMLConstructor({ globalObject, constructorName: "${name}" });
+        globalObject[constructorName] = function() {
+          const newTarget = new.target;
+          return HTMLConstructor({ globalObject, newTarget, constructorName });
         };
 
-        globalObject["${name}"].prototype = ${name}.prototype;
+        globalObject[constructorName].prototype = ${name}.prototype;
       }
     `;
   }
