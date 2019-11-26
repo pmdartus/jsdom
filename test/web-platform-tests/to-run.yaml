@@ -179,13 +179,13 @@ innerhtml-05.xhtml: [fail, Unknown]
 
 ---
 
-DIR: fetch/api/headers
+DIR: fetch/api
 
-header-values-normalize.html: [fail, fetch is not defined]
-header-values.html: [fail, fetch is not defined]
-headers-basic.html: [fail, iterator prototype is wrong]
-headers-no-cors.window.html: [fail, Request is not defined]
-headers-record.html: [needs-node12, V8 bug fixed in Node 12 onward]
+headers/header-values-normalize.html: [fail, fetch is not defined]
+headers/header-values.html: [fail, fetch is not defined]
+headers/headers-basic.html: [fail, iterator prototype is wrong]
+headers/headers-no-cors.window.html: [fail, Request is not defined]
+headers/headers-record.html: [needs-node12, V8 bug fixed in Node 12 onward]
 
 ---
 
