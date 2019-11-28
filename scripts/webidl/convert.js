@@ -11,41 +11,24 @@ const Webidl2js = require("webidl2js");
 const transformer = new Webidl2js({
   implSuffix: "-impl",
   suppressErrors: true,
-  processCEReactions(operationIdl, body) {
-    // In the case of an attribute or a standard method the object holding the reference to the impl is the this value.
-    // In the case of a setter or a deleter it is the target argument passed to the proxy.
-    const obj = operationIdl.setter || operationIdl.deleter ? "target" : "this";
+  processCEReactions(code) {
+    const preSteps = this.addImport("../helpers/custom-elements", "ceReactionsPreSteps");
+    const postSteps = this.addImport("../helpers/custom-elements", "ceReactionsPostSteps");
 
     return `
-      ${obj}[impl]._ceReactionsPreSteps();
-
+      ${preSteps}(globalObject);
       try {
-        ${body}
+        ${code}
       } finally {
-        ${obj}[impl]._ceReactionsPostSteps();
+        ${postSteps}(globalObject);
       }
     `;
   },
-  processHTMLConstructor(interfaceIdl, content) {
-    const { name } = interfaceIdl;
+  processHTMLConstructor() {
+    const identifier = this.addImport("../helpers/html-constructor", "HTMLConstructor");
 
-    return content + `
-      module.exports.installConstructor = function({ globalObject, HTMLConstructor }) {
-        const constructorName = "${name}";
-
-        const constructor = function() {
-          const newTarget = new.target;
-          return HTMLConstructor({ globalObject, newTarget, constructorName });
-        };
-        constructor.prototype = ${name}.prototype;
-
-        Object.defineProperty(globalObject, constructorName, {
-          enumerable: false,
-          configurable: true,
-          writable: true,
-          value: constructor
-        });
-      }
+    return `
+      return ${identifier}(globalObject, new.target);
     `;
   }
 });
