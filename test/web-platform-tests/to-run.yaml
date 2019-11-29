@@ -137,7 +137,6 @@ reactions/Range.html: [fail, Range is not implemented, https://github.com/jsdom/
 reactions/Selection.html: [fail, Selection is not implemented, https://github.com/jsdom/jsdom/issues/937]
 throw-on-dynamic-markup-insertion-counter-construct.html: [timeout, Document.write implementation is not spec compliant]
 throw-on-dynamic-markup-insertion-counter-reactions.html: [timeout, Document.write implementation is not spec compliant]
-upgrading/Document-importNode.html: [fail, HTMLElement constructor is patched for each window and is different than the one used via createElement]
 
 ---
 

@@ -28,7 +28,7 @@ const transformer = new Webidl2js({
     const identifier = this.addImport("../helpers/html-constructor", "HTMLConstructor");
 
     return `
-      return ${identifier}(globalObject, new.target);
+      return ${identifier}(globalObject, interfaceName, new.target);
     `;
   }
 });
