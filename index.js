@@ -8,8 +8,13 @@ new JSDOM(`
     <script>
       debugger;
       console.log('I am here');
+      console.log(EventEmitter)
+      document.addEventListener('load', () => {
+        console.log('ici')
+      });
     </script>
   </body>
 `, {
+  resources: "usable",
   runScripts: "dangerously"
 });
